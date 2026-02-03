@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://hivemind-api-v2.onrender.com';
 
 export const axiosClient = axios.create({
     baseURL: API_URL,

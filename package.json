@@ -2,11 +2,14 @@
     "name": "hivemind",
     "version": "0.5.0",
     "private": true,
+    "engines": {
+        "node": ">=20.16.0"
+    },
     "scripts": {
         "dev": "next dev --turbopack -p 9002",
         "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
         "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-        "build": "NODE_ENV=production next build",
+        "build": "next build",
         "start": "next start",
         "lint": "next lint",
         "typecheck": "tsc --noEmit"
@@ -45,7 +48,7 @@
         "firebase": "^10.12.2",
         "genkit": "^1.20.0",
         "lucide-react": "^0.475.0",
-        "next": "^15.0.0",
+        "next": "15.5.11",
         "next-themes": "^0.3.0",
         "patch-package": "^8.0.0",
         "react": "^18.3.1",

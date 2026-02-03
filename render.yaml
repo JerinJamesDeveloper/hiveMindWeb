@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: hivemind-web
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.16.0
+      - key: NEXT_PUBLIC_API_URL
+        value: https://hivemind-api-v2.onrender.com
+      - key: NEXT_PUBLIC_FIREBASE_API_KEY
+        fromValue: AIzaSyAeHXaw6Na5me8fdC3OZOwwZmuL3Nw65wc
+      - key: GEMINI_API_KEY
+        sync: false
