@@ -1,6 +1,6 @@
-# 🏠 HomeWise v0.5.0
+# 🧠 HiveMind v0.5.0
 
-HomeWise is a futuristic IoT dashboard and automation platform built for smart home enthusiasts and developers. It provides a seamless interface for managing ESP32-based devices with real-time feedback and secure authentication.
+HiveMind is a futuristic IoT dashboard and automation platform built for smart home enthusiasts and developers. It provides a seamless interface for managing ESP32-based devices with real-time feedback and secure authentication.
 
 ## ✨ Latest Updates (v0.5.0)
 
@@ -55,4 +55,4 @@ The application will be available at [http://localhost:9002](http://localhost:90
 
 ---
 
-*HomeWise - Making smart homes smarter.*
+*HiveMind - Making smart homes smarter.*

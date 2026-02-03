@@ -4,11 +4,11 @@ import { useState, useEffect, useRef } from 'react';
 import { Activity } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  Zap, 
-  Wifi, 
+import {
+  ArrowRight,
+  CheckCircle2,
+  Zap,
+  Wifi,
   Bluetooth,
   Code2,
   Gauge,
@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 
 export function Hero() {
-  
+
   const [isTyping, setIsTyping] = useState(true);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -113,9 +113,9 @@ export function Hero() {
     {
       title: "Initialize in 3 Lines",
       language: "cpp",
-      code: `#include <HomeWise.h>
+      code: `#include <HiveMind.h>
 
-HomeWise device("your-api-key");
+HiveMind device("your-api-key");
 
 void setup() {
   device.begin("My ESP32 Device");
@@ -124,7 +124,7 @@ void setup() {
     },
     {
       title: "Send Real-Time Data",
-      language: "cpp", 
+      language: "cpp",
       code: `void loop() {
   float temp = readSensor();
   
@@ -198,11 +198,11 @@ void setup() {
 
   return (
     <div className="bg-[#030712] text-white w-full overflow-x-hidden">
-      
+
       {/* ============================================ */}
       {/* SECTION 1: HERO */}
       {/* ============================================ */}
-      <section 
+      <section
         ref={(el) => {
           if (el) sectionRefs.current.set('hero', el);
         }}
@@ -212,9 +212,9 @@ void setup() {
         {/* Interactive Background Grid */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:60px_60px]" />
-          
+
           {isHovered && (
-            <div 
+            <div
               className="absolute w-[800px] h-[800px] rounded-full pointer-events-none transition-all duration-300"
               style={{
                 left: mousePosition.x - 400,
@@ -223,19 +223,19 @@ void setup() {
               }}
             />
           )}
-          
+
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
             {isHovered && gridPoints.map((point) => {
               const distance = Math.sqrt(
-                Math.pow(point.x - mousePosition.x, 2) + 
+                Math.pow(point.x - mousePosition.x, 2) +
                 Math.pow(point.y - mousePosition.y, 2)
               );
               const maxDistance = 180;
-              
+
               if (distance < maxDistance) {
                 const opacity = (1 - distance / maxDistance) * 0.5;
                 const lineOpacity = (1 - distance / maxDistance) * 0.2;
-                
+
                 return (
                   <g key={point.id}>
                     <line
@@ -267,7 +267,7 @@ void setup() {
             )}
           </svg>
         </div>
-        
+
         {/* Gradient Glows */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-gradient-to-b from-blue-600/8 via-purple-600/4 to-transparent blur-3xl z-0" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[120px] z-0" />
@@ -275,7 +275,7 @@ void setup() {
 
         <div ref={containerRef} className="relative z-10 px-6">
           <div className="text-center w-full">
-            
+
             {/* Badge */}
             <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-sm mb-8 animate-fade-in-down">
               <div className="flex items-center gap-2">
@@ -305,8 +305,8 @@ void setup() {
                 <span className="bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-slate-400">
                   {text}
                 </span>
-                <span 
-                  className={`ml-2 inline-block w-[5px] h-[0.85em] bg-gradient-to-b from-blue-400 to-cyan-500 align-middle rounded-full ${isTyping ? 'animate-blink' : 'opacity-0'}`} 
+                <span
+                  className={`ml-2 inline-block w-[5px] h-[0.85em] bg-gradient-to-b from-blue-400 to-cyan-500 align-middle rounded-full ${isTyping ? 'animate-blink' : 'opacity-0'}`}
                 />
               </h1>
             </div>
@@ -317,14 +317,14 @@ void setup() {
               <span className="text-blue-400">WiFi</span>,{' '}
               <span className="text-purple-400">BLE</span>,{' '}
               <span className="text-cyan-400">MQTT</span>, and{' '}
-              <span className="text-emerald-400">UI</span> — 
+              <span className="text-emerald-400">UI</span> —
               so you can focus on building amazing hardware.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up animation-delay-300">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="h-14 px-10 text-base font-semibold bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white rounded-full transition-all duration-300 shadow-[0_0_40px_-10px_rgba(59,130,246,0.5)] hover:shadow-[0_0_50px_-10px_rgba(59,130,246,0.6)] hover:scale-[1.02]"
                 asChild
               >
@@ -332,9 +332,9 @@ void setup() {
                   Start Building Free <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="h-14 px-10 text-base font-semibold border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 text-white rounded-full transition-all duration-300"
                 asChild
               >
@@ -347,8 +347,8 @@ void setup() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {stats.map((stat, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="text-center animate-fade-in-up"
                   style={{ animationDelay: `${400 + index * 100}ms` }}
                 >
@@ -373,7 +373,7 @@ void setup() {
       {/* ============================================ */}
       {/* SECTION 2: THE LIBRARY */}
       {/* ============================================ */}
-      <section 
+      <section
         ref={(el) => {
           if (el) sectionRefs.current.set('library', el);
         }}
@@ -383,15 +383,14 @@ void setup() {
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#030712] via-[#0a1628] to-[#030712]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-blue-500/5 rounded-full blur-[150px]" />
-        
+
         <div className="w-full max-w-[1400px] relative z-10 px-6 mx-auto">
-          
+
           {/* Section Header */}
-          <div className={`text-center mb-20 transition-all duration-1000 ${
-            visibleSections.has('library') 
-              ? 'opacity-100 translate-y-0' 
+          <div className={`text-center mb-20 transition-all duration-1000 ${visibleSections.has('library')
+              ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-10'
-          }`}>
+            }`}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
               <Terminal className="w-4 h-4 text-blue-400" />
               <span className="text-sm font-medium text-blue-400">Arduino Library</span>
@@ -406,36 +405,34 @@ void setup() {
               </span>
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Our ESP32 library abstracts away all the complexity of IoT connectivity. 
+              Our ESP32 library abstracts away all the complexity of IoT connectivity.
               Just include, initialize, and ship.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            
+
             {/* Code Examples */}
-            <div className={`space-y-4 w-full transition-all duration-1000 delay-200 ${
-              visibleSections.has('library') 
-                ? 'opacity-100 translate-x-0' 
+            <div className={`space-y-4 w-full transition-all duration-1000 delay-200 ${visibleSections.has('library')
+                ? 'opacity-100 translate-x-0'
                 : 'opacity-0 -translate-x-10'
-            }`}>
+              }`}>
               {/* Tabs */}
               <div className="flex gap-2 p-1.5 bg-white/[0.03] rounded-xl border border-white/[0.06]">
                 {codeExamples.map((example, index) => (
                   <button
                     key={index}
                     onClick={() => setActiveTab(index)}
-                    className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
-                      activeTab === index 
-                        ? 'bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-white border border-blue-500/30' 
+                    className={`flex-1 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${activeTab === index
+                        ? 'bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-white border border-blue-500/30'
                         : 'text-slate-400 hover:text-white'
-                    }`}
+                      }`}
                   >
                     {example.title}
                   </button>
                 ))}
               </div>
-              
+
               {/* Code Block */}
               <div className="relative bg-[#0d1117] rounded-2xl border border-white/[0.06] overflow-hidden">
                 {/* Window Controls */}
@@ -445,7 +442,7 @@ void setup() {
                   <div className="w-3 h-3 rounded-full bg-green-500/80" />
                   <span className="ml-4 text-xs text-slate-500 font-mono">main.cpp</span>
                 </div>
-                
+
                 {/* Code Content */}
                 <div className="p-6 overflow-x-auto">
                   <pre className="text-sm font-mono leading-relaxed">
@@ -458,7 +455,7 @@ void setup() {
                               .replace(/(#include|void|float|if|else|String)/g, '<span class="text-purple-400">$1</span>')
                               .replace(/(".*?")/g, '<span class="text-emerald-400">$1</span>')
                               .replace(/(\/\/.*$)/gm, '<span class="text-slate-500">$1</span>')
-                              .replace(/(HomeWise|device|setup|loop|begin|connect|send|onCommand|readSensor|digitalWrite)/g, '<span class="text-blue-400">$1</span>')
+                              .replace(/(HiveMind|device|setup|loop|begin|connect|send|onCommand|readSensor|digitalWrite)/g, '<span class="text-blue-400">$1</span>')
                               .replace(/(\d+\.?\d*)/g, '<span class="text-amber-400">$1</span>')
                           }} />
                         </div>
@@ -476,7 +473,7 @@ void setup() {
               {/* Install Command */}
               <div className="flex items-center gap-3 p-4 bg-white/[0.02] rounded-xl border border-white/[0.06]">
                 <div className="flex-1 font-mono text-sm text-slate-400">
-                  <span className="text-emerald-400">$</span> pio lib install "HomeWise"
+                  <span className="text-emerald-400">$</span> pio lib install "HiveMind"
                 </div>
                 <Button variant="ghost" size="sm" className="text-slate-400 hover:text-white">
                   Copy
@@ -485,13 +482,12 @@ void setup() {
             </div>
 
             {/* Features Grid */}
-            <div className={`grid grid-cols-2 gap-4 w-full transition-all duration-1000 delay-400 ${
-              visibleSections.has('library') 
-                ? 'opacity-100 translate-x-0' 
+            <div className={`grid grid-cols-2 gap-4 w-full transition-all duration-1000 delay-400 ${visibleSections.has('library')
+                ? 'opacity-100 translate-x-0'
                 : 'opacity-0 translate-x-10'
-            }`}>
+              }`}>
               {features.map((feature, index) => (
-                <div 
+                <div
                   key={index}
                   className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.12] transition-all duration-300 hover:-translate-y-1 group animate-fade-in-up"
                   style={{ animationDelay: `${600 + index * 100}ms` }}
@@ -511,7 +507,7 @@ void setup() {
       {/* ============================================ */}
       {/* SECTION 3: DASHBOARD PREVIEW */}
       {/* ============================================ */}
-      <section 
+      <section
         ref={(el) => {
           if (el) sectionRefs.current.set('dashboard', el);
         }}
@@ -522,15 +518,14 @@ void setup() {
         <div className="absolute inset-0 bg-[#030712]" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-purple-500/5 rounded-full blur-[150px]" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[120px]" />
-        
+
         <div className="w-full max-w-[1400px] relative z-10 px-6 mx-auto">
-          
+
           {/* Section Header */}
-          <div className={`text-center mb-16 transition-all duration-1000 ${
-            visibleSections.has('dashboard') 
-              ? 'opacity-100 translate-y-0' 
+          <div className={`text-center mb-16 transition-all duration-1000 ${visibleSections.has('dashboard')
+              ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-10'
-          }`}>
+            }`}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
               <Sparkles className="w-4 h-4 text-purple-400" />
               <span className="text-sm font-medium text-purple-400">Real-Time Dashboard</span>
@@ -545,20 +540,19 @@ void setup() {
               </span>
             </h2>
             <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              Every sensor value you send automatically gets a widget. 
+              Every sensor value you send automatically gets a widget.
               Charts, gauges, toggles — all generated from your data.
             </p>
           </div>
 
           {/* Dashboard Preview */}
-          <div className={`relative max-w-6xl mx-auto transition-all duration-1000 delay-300 ${
-            visibleSections.has('dashboard') 
-              ? 'opacity-100 scale-100' 
+          <div className={`relative max-w-6xl mx-auto transition-all duration-1000 delay-300 ${visibleSections.has('dashboard')
+              ? 'opacity-100 scale-100'
               : 'opacity-0 scale-95'
-          }`}>
+            }`}>
             {/* Browser Frame */}
             <div className="relative bg-[#0a0a12] rounded-3xl border border-white/[0.08] shadow-2xl overflow-hidden">
-              
+
               {/* Browser Header */}
               <div className="flex items-center gap-4 px-6 py-4 bg-white/[0.02] border-b border-white/[0.06]">
                 <div className="flex gap-2">
@@ -576,7 +570,7 @@ void setup() {
 
               {/* Dashboard Content */}
               <div className="p-4 md:p-8 grid grid-cols-12 gap-4 md:gap-6">
-                
+
                 {/* Sidebar */}
                 <div className="col-span-12 md:col-span-3 space-y-4">
                   <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.05]">
@@ -589,7 +583,7 @@ void setup() {
                         <div className="text-xs text-slate-500">Living Room</div>
                       </div>
                     </div>
-                    
+
                     <div className="space-y-3">
                       {['temperature', 'humidity', 'light', 'motion'].map((sensor, i) => (
                         <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02]">
@@ -603,7 +597,7 @@ void setup() {
 
                 {/* Main Content */}
                 <div className="col-span-12 md:col-span-9 space-y-4 md:space-y-6">
-                  
+
                   {/* Top Row - Stats */}
                   <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
                     {[
@@ -638,16 +632,16 @@ void setup() {
                         ))}
                       </div>
                     </div>
-                    
+
                     {/* Simulated Chart */}
                     <div className="h-48 flex items-end gap-1">
                       {Array.from({ length: 48 }).map((_, i) => {
                         const height = 30 + Math.random() * 60;
                         return (
-                          <div 
-                            key={i} 
+                          <div
+                            key={i}
                             className="flex-1 bg-gradient-to-t from-blue-500/50 to-cyan-500/50 rounded-t transition-all hover:from-blue-500 hover:to-cyan-500 animate-scale-in"
-                            style={{ 
+                            style={{
                               height: `${height}%`,
                               animationDelay: `${i * 20}ms`
                             }}
@@ -669,13 +663,13 @@ void setup() {
                           <div className="text-sm font-medium text-white mb-1">{control.label}</div>
                           <div className="text-xs text-slate-500">{control.status}</div>
                         </div>
-                        <div 
+                        <div
                           className="w-12 h-6 rounded-full p-1 transition-colors cursor-pointer"
                           style={{ backgroundColor: control.status !== 'Off' ? control.color + '40' : '#374151' }}
                         >
-                          <div 
+                          <div
                             className="w-4 h-4 rounded-full transition-transform"
-                            style={{ 
+                            style={{
                               backgroundColor: control.status !== 'Off' ? control.color : '#6b7280',
                               transform: control.status !== 'Off' ? 'translateX(24px)' : 'translateX(0)'
                             }}
@@ -706,7 +700,7 @@ void setup() {
       {/* ============================================ */}
       {/* SECTION 4: CTA */}
       {/* ============================================ */}
-      <section 
+      <section
         ref={(el) => {
           if (el) sectionRefs.current.set('cta', el);
         }}
@@ -717,13 +711,12 @@ void setup() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#030712] via-[#0a1020] to-[#030712]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:80px_80px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-[150px]" />
-        
-        <div className={`w-full max-w-5xl relative z-10 px-6 mx-auto text-center transition-all duration-1000 ${
-          visibleSections.has('cta') 
-            ? 'opacity-100 translate-y-0' 
+
+        <div className={`w-full max-w-5xl relative z-10 px-6 mx-auto text-center transition-all duration-1000 ${visibleSections.has('cta')
+            ? 'opacity-100 translate-y-0'
             : 'opacity-0 translate-y-10'
-        }`}>
-          
+          }`}>
+
           {/* Icon */}
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/20 mb-8 animate-float mx-auto">
             <Cpu className="w-10 h-10 text-blue-400" />
@@ -740,14 +733,14 @@ void setup() {
           </h2>
 
           <p className="text-xl sm:text-2xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Join thousands of developers who ship IoT products faster with HomeWise. 
+            Join thousands of developers who ship IoT products faster with HiveMind.
             Free tier includes unlimited devices and 30-day data retention.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up animation-delay-200">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="h-16 px-12 text-lg font-semibold bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 hover:from-blue-500 hover:via-cyan-400 hover:to-emerald-400 text-white rounded-full transition-all duration-300 shadow-[0_0_50px_-10px_rgba(59,130,246,0.5)] hover:shadow-[0_0_60px_-10px_rgba(59,130,246,0.6)] hover:scale-[1.02]"
               asChild
             >
@@ -755,9 +748,9 @@ void setup() {
                 Create Free Account <ArrowRight className="ml-3 w-6 h-6" />
               </Link>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               className="h-16 px-12 text-lg font-semibold border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 text-white rounded-full transition-all duration-300"
               asChild
             >
@@ -788,8 +781,8 @@ void setup() {
             <p className="text-sm text-slate-600 mb-8 uppercase tracking-widest">Trusted by developers at</p>
             <div className="flex flex-wrap justify-center items-center gap-12 opacity-40">
               {['Google', 'Microsoft', 'Amazon', 'Tesla', 'SpaceX'].map((company, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className="text-xl font-bold text-slate-400 animate-fade-in-up"
                   style={{ animationDelay: `${500 + i * 100}ms` }}
                 >

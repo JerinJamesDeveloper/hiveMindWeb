@@ -181,7 +181,7 @@ export default function SignupPage() {
       await signup({ email, password }, fullName);
 
       toast({
-        title: '🎉 Welcome to HomeWise!',
+        title: '🎉 Welcome to HiveMind!',
         description: 'Your account has been created. Let\'s build something amazing!'
       });
       router.push('/dashboard');
@@ -316,7 +316,7 @@ export default function SignupPage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <h1 className="text-2xl font-bold text-white mb-1">Join HomeWise</h1>
+                  <h1 className="text-2xl font-bold text-white mb-1">Join HiveMind</h1>
                   <p className="text-sm text-slate-400">Start building amazing IoT projects today</p>
                 </div>
               </div>

@@ -42,7 +42,7 @@ export default function LoginPage() {
   const featureCards = [
     {
       icon: Sparkles,
-      title: "Welcome to HomeWise",
+      title: "Welcome to HiveMind",
       description: "Your journey to smarter IoT development begins here. Connect, control, and monitor your ESP32 devices from anywhere in the world.",
       gradient: "from-blue-500 to-cyan-500",
       stats: [

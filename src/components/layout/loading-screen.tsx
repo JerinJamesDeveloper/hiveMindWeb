@@ -22,8 +22,8 @@ import {
 } from 'lucide-react';
 
 const techIcons = [
-  Cpu, Wifi, Bluetooth, Radio, Zap, Globe, Shield, Gauge, 
-  Activity, Command, Lightbulb, Thermometer, Wind, Lock, 
+  Cpu, Wifi, Bluetooth, Radio, Zap, Globe, Shield, Gauge,
+  Activity, Command, Lightbulb, Thermometer, Wind, Lock,
   Smartphone, Laptop
 ];
 
@@ -63,13 +63,13 @@ const getRandomPosition = (): { x: number; y: number } => {
   let x, y;
   let attempts = 0;
   const maxAttempts = 50;
-  
+
   do {
     x = Math.random() * 90 + 5; // 5-95% to keep icons on screen
     y = Math.random() * 90 + 5;
     attempts++;
   } while (!isFarFromCenter(x, y, 30) && attempts < maxAttempts);
-  
+
   return { x, y };
 };
 
@@ -80,7 +80,7 @@ const generateIcons = (count: number): FloatingIcon[] => {
   for (let i = 0; i < count; i++) {
     const position = getRandomPosition();
     const Icon = techIcons[Math.floor(Math.random() * techIcons.length)];
-    
+
     generatedIcons.push({
       id: i,
       Icon,
@@ -103,10 +103,10 @@ export function LoadingScreen() {
 
   return (
     <div className="relative flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-[#030712] via-[#0a0a1a] to-[#030712] overflow-hidden">
-      
+
       {/* Grid Pattern Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:60px_60px]" />
-      
+
       {/* Gradient Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-b from-blue-600/5 via-purple-600/3 to-transparent blur-3xl" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-500/3 rounded-full blur-[100px]" />
@@ -128,24 +128,24 @@ export function LoadingScreen() {
         >
           <div className="relative group">
             {/* Icon Glow */}
-            <div 
+            <div
               className="absolute inset-0 blur-xl opacity-50 transition-opacity duration-500"
-              style={{ 
+              style={{
                 width: icon.size,
                 height: icon.size
               }}
             >
-              <icon.Icon 
+              <icon.Icon
                 className={icon.color}
                 size={icon.size}
               />
             </div>
-            
+
             {/* Icon Container */}
-            <div 
+            <div
               className="relative rounded-xl bg-white/[0.02] backdrop-blur-sm border border-white/[0.05] p-2 transition-all duration-500"
             >
-              <icon.Icon 
+              <icon.Icon
                 className={`${icon.color} animate-pulse-slow`}
                 size={icon.size}
                 style={{
@@ -171,7 +171,7 @@ export function LoadingScreen() {
             <div className="w-2 h-2 rounded-full bg-purple-500 animate-bounce" style={{ animationDelay: '150ms' }} />
             <div className="w-2 h-2 rounded-full bg-cyan-500 animate-bounce" style={{ animationDelay: '300ms' }} />
           </div>
-          <span className="text-sm font-medium text-slate-400">Initializing HomeWise...</span>
+          <span className="text-sm font-medium text-slate-400">Initializing HiveMind...</span>
         </div>
       </div>
 

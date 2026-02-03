@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { AuthProvider } from '@/application/hooks/use-auth';
 
 export const metadata: Metadata = {
-  title: 'HomeWise',
+  title: 'HiveMind',
   description: 'A futuristic home automation website',
 };
 

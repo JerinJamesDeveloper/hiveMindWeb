@@ -21,9 +21,9 @@ function generateArduinoCode(user: User, apiKey: ApiKey, devices: Device[]): str
       const deviceId = device.id;
       const deviceType = device.type === 'light' ? 'bulb' : device.type;
       const pin = 16 + index; // Sequential GPIO pins starting from 16
-      
+
       let deviceCode = '';
-      
+
       switch (device.type) {
         case 'light':
           deviceCode = `  home.addDevice("${deviceId}", TYPE_BULB, ${pin}, RELAY_ACTIVE_LOW);`;
@@ -37,7 +37,7 @@ function generateArduinoCode(user: User, apiKey: ApiKey, devices: Device[]): str
         default:
           deviceCode = `  home.addDevice("${deviceId}", TYPE_BULB, ${pin}, RELAY_ACTIVE_LOW);`;
       }
-      
+
       return deviceCode;
     })
     .join('\n');
@@ -46,7 +46,7 @@ function generateArduinoCode(user: User, apiKey: ApiKey, devices: Device[]): str
   const keyCode = apiKey.key.substring(0, 12).toUpperCase();
 
   return `/*
- * HomeWise ESP32 Configuration
+ * HiveMind ESP32 Configuration
  * 
  * Device: ${user.name || 'Smart Home Hub'}
  * API Key: ${apiKey.name}
@@ -87,7 +87,7 @@ ${deviceRegistrations}
   // ══════════════════════════════════════════
 
   Serial.println("\\n╔════════════════════════════════════════╗");
-  Serial.println("║       HomeWise Device Starting...      ║");
+  Serial.println("║       HiveMind Device Starting...      ║");
   Serial.println("╚════════════════════════════════════════╝\\n");
 
   if (!home.begin()) {
@@ -179,13 +179,13 @@ export function IntegrationDialog({ user, apiKey, devices }: { user: User, apiKe
           .replace(/\b([a-zA-Z_][a-zA-Z0-9_]*)\s*\(/g, '<span class="text-blue-400">$1</span>(')
           // Numbers
           .replace(/\b(\d+)\b/g, '<span class="text-amber-400">$1</span>');
-        
+
         return (
           <div key={i} className="flex hover:bg-white/[0.02] transition-colors">
             <span className="w-12 flex-shrink-0 text-right pr-4 text-slate-600 select-none border-r border-white/[0.05]">
               {i + 1}
             </span>
-            <span 
+            <span
               className="flex-1 pl-4 whitespace-pre"
               dangerouslySetInnerHTML={{ __html: highlighted }}
             />
@@ -197,7 +197,7 @@ export function IntegrationDialog({ user, apiKey, devices }: { user: User, apiKe
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button 
+        <Button
           variant="outline"
           className="border-blue-500/20 bg-blue-500/10 hover:bg-blue-500/20 hover:border-blue-500/30 text-blue-400 transition-all duration-300"
         >
@@ -211,7 +211,7 @@ export function IntegrationDialog({ user, apiKey, devices }: { user: User, apiKe
           {/* Background Gradient */}
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-cyan-600/10" />
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px]" />
-          
+
           <DialogHeader className="relative z-10">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/20 flex items-center justify-center">
@@ -259,11 +259,10 @@ export function IntegrationDialog({ user, apiKey, devices }: { user: User, apiKe
             <Button
               variant="ghost"
               size="sm"
-              className={`h-9 px-3 rounded-lg transition-all ${
-                copied 
-                  ? 'bg-emerald-500/20 border-emerald-500/30 text-emerald-400' 
+              className={`h-9 px-3 rounded-lg transition-all ${copied
+                  ? 'bg-emerald-500/20 border-emerald-500/30 text-emerald-400'
                   : 'bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.05] text-slate-300 hover:text-white'
-              }`}
+                }`}
               onClick={handleCopy}
             >
               {copied ? (

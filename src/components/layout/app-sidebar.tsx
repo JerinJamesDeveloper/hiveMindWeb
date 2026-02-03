@@ -21,7 +21,7 @@ export function AppSidebar() {
         <div className="flex items-center gap-2">
           <Logo className="h-8 w-8 text-primary" />
           <h1 className="text-xl font-bold font-headline text-foreground group-data-[collapsible=icon]:hidden">
-            HomeWise
+            HiveMind
           </h1>
         </div>
       </SidebarHeader>
@@ -53,13 +53,13 @@ export function AppSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarContent>
-       <SidebarFooter>
-         <SidebarMenu>
+      <SidebarFooter>
+        <SidebarMenu>
           <SidebarMenuItem>
-              <SidebarMenuButton tooltip="Help">
-                  <LifeBuoy />
-                  <span>Help & Support</span>
-              </SidebarMenuButton>
+            <SidebarMenuButton tooltip="Help">
+              <LifeBuoy />
+              <span>Help & Support</span>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>

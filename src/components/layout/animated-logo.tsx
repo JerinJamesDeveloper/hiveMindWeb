@@ -14,14 +14,14 @@ export function AnimatedLogo() {
   return (
     <div className="relative w-60 h-60">
       {/* Background glow effect */}
-      <div 
+      <div
         className="absolute inset-0 bg-blue-500/30 rounded-full blur-2xl animate-pulse"
       />
-      
+
       {/* The main logo image */}
       <Image
         src="/image/logowhite.png"
-        alt="HomeWise Logo"
+        alt="HiveMind Logo"
         width={230}
         height={230}
         className="relative animate-pulse"

@@ -10,7 +10,7 @@ export function LandingHeader() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <Logo className="h-8 w-8 text-primary" />
-          <span className="text-xl font-bold text-white">HomeWise</span>
+          <span className="text-xl font-bold text-white">HiveMind</span>
         </Link>
         <nav className="flex items-center gap-4">
           <Button variant="outline" className="text-white border-white/50 bg-white/10 hover:bg-white/20 hover:text-white" asChild>
